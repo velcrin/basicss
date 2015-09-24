@@ -1,0 +1,33 @@
+$red: (base: #F44336, light: #E57373, strong: #D32F2F);
+$pink: (base: #E91E63, light: #F06292, strong: #C2185B);
+$purple: (base: #9C27B0, light: #BA68C8, strong: #7B1FA2);
+$indigo: (base: #3F51B5, light: #7986CB, strong: #303F9F);
+$blue: (base: #2196F3, light: #64B5F6, strong: #1976D2);
+$cyan: (base: #00BCD4, light: #4DD0E1, strong: #0097A7);
+$teal: (base: #009688, light: #4DB6AC, strong: #00796B);
+$green: (base: #4CAF50, light: #81C784, strong: #388E3C);
+$lime: (base: #CDDC39, light: #DCE775, strong: #AFB42B);
+$yellow: (base: #FFEB3B, light: #FFF176, strong: #FBC02D);
+$amber: (base: #FFC107, light: #FFD54F, strong: #FFA000);
+$orange: (base: #FF9800, light: #FFB74D, strong: #F57C00);
+$brown: (base: #795548, light: #A1887F, strong: #5D4037);
+$grey: (base: #9E9E9E, light: #E0E0E0, strong: #616161);
+$blue-grey: (base: #607D8B, light: #90A4AE, strong: #455A64);
+
+$colors: (
+        red: $red,
+        pink: $pink,
+        purple: $purple,
+        indigo: $indigo,
+        blue: $blue,
+        cyan: $cyan,
+        teal: $teal,
+        green: $green,
+        lime: $lime,
+        sand: $yellow, // yellow breaks the build, figure out...
+        amber: $amber,
+        orange: $orange,
+        brown: $brown,
+        grey: $grey,
+        blue-grey: $blue-grey
+);

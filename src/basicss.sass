@@ -1,0 +1,48 @@
+@import 'color-palette'
+
+// sizes
+$base: 5px
+$thin: 1px
+$thick: 10px
+
+@mixin build-color-property($prop, $postfix)
+  @each $name, $color in $colors
+    &.#{$name}#{$postfix}
+      #{$prop}: map_get($color, 'base')
+    &.light-#{$name}#{$postfix}
+      #{$prop}: map_get($color, 'light')
+    &.strong-#{$name}#{$postfix}
+      #{$prop}: map_get($color, 'strong')
+
+@mixin build-size-property($name, $postfix)
+  .#{$name}
+    &.around
+      #{$name}#{$postfix}: $base
+      &.thin
+        #{$name}#{$postfix}: $thin
+      &.thick
+        #{$name}#{$postfix}: $thick
+    @each $direction in ('top', 'right', 'bottom', 'left')
+      &.#{$direction}
+        &.thin
+          #{$name}-#{$direction}#{$postfix}: $thin
+        &.thick
+          #{$name}-#{$direction}#{$postfix}: $thick
+
+@include build-size-property('border', '-width')
+@include build-size-property('padding', '')
+@include build-size-property('margin', '')
+
+.border
+  @each $style in (dotted dashed solid double groove ridge inset outset)
+    &.around
+      &.#{$style}
+        border-style: #{$style}
+    @each $direction in ('top', 'right', 'bottom', 'left')
+      &.#{$direction}
+        &.#{$style}
+          border-#{$direction}-style: #{$style}
+  @include build-color-property('border-color', '')
+
+@include build-color-property('background-color', '-background')
+@include build-color-property('color', '-text')
