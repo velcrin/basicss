@@ -36,10 +36,12 @@ $thick: 10px
 .border
   @each $style in (dotted dashed solid double groove ridge inset outset)
     &.around
+      border-style: solid
       &.#{$style}
         border-style: #{$style}
     @each $direction in ('top', 'right', 'bottom', 'left')
       &.#{$direction}
+        border-#{$direction}-style: solid
         &.#{$style}
           border-#{$direction}-style: #{$style}
   @include build-color-property('border-color', '')
