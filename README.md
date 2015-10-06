@@ -27,7 +27,7 @@ color
 
 ## Background
 
-e.g. `light-blue-grey`
+e.g. `light-blue-grey-background`
 
 color`-background`
 
